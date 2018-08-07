@@ -14,9 +14,9 @@ def find_center(matrix):
     else:
         y = (len(matrix[0]) / 2 - 1, len(matrix[0]) / 2)
 
+    # both inner and outer arrays are odd,  there's a dead center.
     if type(x) == int and type(y) == int:
         return (x, y)
-
     # inner array is even
     if type(x) == tuple and type(y) == int:
         middle_cells = [(x[0], y), (x[1], y)]
@@ -37,6 +37,11 @@ def find_center(matrix):
 
 
 def get_largest_adjacent(cell, matrix):
+    '''
+    return the largest adjascent cell.
+    if there are no cells with carrots,  return None
+    '''
+
     x, y = cell
     adj = []
     #  Collect all cells to the right, left, above, and below current cell.
@@ -90,9 +95,15 @@ garden3 = [
     [4, 6, 3, 4, 9],
     [3, 1, 0, 5, 8]]
 
+garden4 = [
+    [5, 7, 8, 6, 3],
+    [0, 0, 0, 0, 4],
+    [4, 0, 0, 0, 9],
+    [4, 0, 0, 0, 9],
+    [3, 1, 0, 5, 8]]
 
 if __name__ == '__main__':
-    test = run(garden1)
+    test = run(garden4)
     print 'test case returned {}'.format(test)
     if test == 27:
         print 'Passed'
