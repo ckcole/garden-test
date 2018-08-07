@@ -1,4 +1,9 @@
 # garden-test
+## to run
+>>>python garden-test.py
+
+## prompt
+
 QUESTION
 Prompt: Write a function that takes the input, gives the output, and meets the conditions below.
 
