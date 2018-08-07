@@ -13,6 +13,12 @@ garden2 = [
 [4, 6, 3, 9],
 [3, 1, 0, 8]]
 
+garden3 = [
+[5, 7, 8, 6, 3],
+[0, 0, 7, 0, 4],
+[4, 6, 3, 4, 9],
+[4, 6, 3, 4, 9],
+[3, 1, 0, 5, 8]]
 
 def find_center(matrix):
     '''
@@ -30,6 +36,9 @@ def find_center(matrix):
     else:
         x = (len(matrix[0]) / 2 - 1, len(matrix[0]) / 2)
 
+    if type(x) == int and type(y) == int:
+        return (x, y)
+
     #  if neither has a middle,  get all four center cells
     if type(y) == tuple and type(x) == tuple:
         middle_cells = [(x[0], y[0]), (x[1], y[0]), (x[0], y[1]), (x[1], y[1])]
@@ -41,5 +50,6 @@ def find_center(matrix):
                 largest_cell = cell
         return largest_cell
 
+
 if __name__ == '__main__':
-    this = find_center(garden2)
+    print find_center(garden3)
